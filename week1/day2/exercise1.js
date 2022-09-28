@@ -48,8 +48,8 @@ const a = {
 
 const b = {};
 
-for (let p in a) {
-    b[a[p]] = p;
+for (let city in a) {
+    b[a[city]] = city;
 }
 console.log(b);
 
