@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+    height: 100vh;
+}
+
+.top-section {
+    display: flex;
+    height: 500px;
+}
+
+.logo {
+    background-image: url("assets/assets/spiced.png");
+    /* background-color: red; */
+    height: 100%;
+    background-repeat: no-repeat;
+}
+
+.menu {
+    background-image: url("assets/assets/hamburgermenu.svg");
+    /* background-color: yellow; */
+    height: 100px;
+    width: 100px;
+    background-repeat: no-repeat;
+}
