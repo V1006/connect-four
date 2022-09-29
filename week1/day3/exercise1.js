@@ -32,6 +32,19 @@ waitThenRun(function () {
 
 //3
 
+// math solution
+
+function expectNumMath(num) {
+    if (num <= 0 || typeof num !== "number") {
+        return "ERROR";
+    } else if (num >= 1000000) return num;
+    else return num * Math.pow(10, Math.ceil(Math.log10(1000000 / num)));
+}
+
+expectNumMath(500);
+
+// functional solution
+
 function expectNum(num) {
     if (num <= 0 || typeof num !== "number") {
         return "ERROR";
