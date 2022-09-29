@@ -41,7 +41,7 @@ function expectNumMath(num) {
     else return num * Math.pow(10, Math.ceil(Math.log10(1000000 / num)));
 }
 
-expectNumMath(500);
+console.log(expectNumMath(500));
 
 // functional solution
 
