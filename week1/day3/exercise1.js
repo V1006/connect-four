@@ -49,15 +49,9 @@ function expectNum(num) {
     if (num <= 0 || typeof num !== "number") {
         return "ERROR";
     } else if (num >= 1000000) return num;
-    else return multi(num);
+    else return expectNum(num * 10);
 }
 
-function multi(num) {
-    if (num < 1000000) {
-        num *= 10;
-        return multi(num);
-    } else return num;
-}
 console.log(expectNum(500));
 
 // 4
