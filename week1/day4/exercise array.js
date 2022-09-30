@@ -17,11 +17,9 @@ console.log(reversedArray); // [3, 2, 1]
 // 2
 
 function getLessThanZero(arr) {
-    return arr.filter(zero);
-}
-
-function zero(x) {
-    return x < 0;
+    return arr.filter(function (x) {
+        return x < 0;
+    });
 }
 
 console.log(getLessThanZero([1, 2, -1, -90, 10])); //[-1, -90]
