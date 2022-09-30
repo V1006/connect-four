@@ -8,7 +8,7 @@ function sum() {
     } else {
         for (let i = 0; i < arguments.length; i++) {
             if (typeof arguments[i] !== "number") {
-                throw "Only numbers a valid";
+                throw "Only numbers are valid";
             } else num += arguments[i];
         }
         return num;
