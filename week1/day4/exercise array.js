@@ -28,7 +28,7 @@ console.log(getLessThanZero([1, 2])); //[]
 // 3 bonus
 
 function each(obOrArr, func) {
-    if (obOrArr == Array.isArray) {
+    if (Array.isArray(obOrArr)) {
         for (let i = 0; i < obOrArr.length; i++) {
             func(obOrArr[i], i);
         }
