@@ -110,13 +110,12 @@ button:active {
 
 #boxes {
     width: 50%;
-    height: 100px;
     display: flex;
-    padding-left: 1rem;
 }
 
 #icon {
     padding-right: 1rem;
+    max-height: 100px;
 }
 
 /* footer */
@@ -127,9 +126,23 @@ footer {
     color: white;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 996px) {
     .main-section-bot {
         flex-direction: column;
         gap: 15px;
+        padding: 0;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    #boxes {
+        width: 90%;
+    }
+    h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+    button {
+        font-size: 20px;
     }
 }
