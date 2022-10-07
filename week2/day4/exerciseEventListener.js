@@ -3,11 +3,11 @@ let box = document.getElementById("box");
 
 // 1
 
-/* document.documentElement.addEventListener("mousemove", function (event) {
+document.documentElement.addEventListener("mousemove", function (event) {
     console.log(event.clientX, event.clientY);
     box.style.left = event.clientX - 50 + "px";
     box.style.top = event.clientY - 50 + "px";
-}); */
+});
 
 // 2
 /* function random(max, min = 0) {
@@ -23,7 +23,8 @@ box.addEventListener("mouseup", function () {
 }); */
 
 // 3 new solution without removing the eventlistener
-function random(max, min = 0) {
+
+/* function random(max, min = 0) {
     return min + Math.round(Math.random() * (max - min));
 }
 
@@ -39,9 +40,10 @@ box.addEventListener("mousedown", x);
 
 box2.addEventListener("mousedown", function () {
     box2.style.backgroundColor = "#" + random(256 ** 3).toString(16);
-});
+}); */
 
 // 3 solution with removing event listener
+
 //note for me : if event.target.id === box event.stopPropagation()  possible solution  event.target.removeEventlistener
 /* function random(max, min = 0) {
     return min + Math.round(Math.random() * (max - min));

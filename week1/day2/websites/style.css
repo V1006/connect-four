@@ -129,15 +129,36 @@ footer {
     padding-left: 3rem;
     color: white;
 }
+
+/*  shroud element */
+
+.shroud {
+    background-color: black;
+    position: fixed;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s;
+}
+
+.shroud.active {
+    background-color: black;
+    position: fixed;
+    inset: 0;
+    opacity: 0.5;
+    visibility: visible;
+}
 /* Hamburger nav bar */
 #nav {
-    position: absolute;
+    position: fixed;
     right: 0;
     background-color: white;
     height: 100vh;
     width: 20%;
     clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
     transition: clip-path 0.3s;
+    /* visibility: hidden; */
+    /* inset : 0; */
 }
 .x {
     height: 3rem;
@@ -148,7 +169,7 @@ footer {
 
 .x p {
     font-size: 25px;
-    margin-right: 1rem;
+    margin-right: 1.5rem;
 }
 .x p:hover {
     cursor: pointer;

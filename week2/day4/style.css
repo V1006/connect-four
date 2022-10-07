@@ -6,12 +6,12 @@
 
 /* exercise 1 */
 
-/* #box {
+#box {
     height: 100px;
     width: 100px;
     position: absolute;
     background-color: darkred;
-} */
+}
 
 /* Exercise 2 */
 
@@ -23,7 +23,7 @@
 
 /* Exercise 3 */
 
-#box {
+/* #box {
     height: 200px;
     width: 200px;
     background-color: crimson;
@@ -37,3 +37,4 @@
     width: 50px;
     background-color: limegreen;
 }
+ */
