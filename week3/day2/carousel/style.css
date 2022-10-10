@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#kitties {
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cats {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform: translateX(100%);
+}
+
+.cats.on-screen {
+    transform: translateX(0%);
+    transition: transform, 3s;
+}
+
+.exit {
+    transform: translateX(-100%);
+    transition: transform, 3s;
+}
