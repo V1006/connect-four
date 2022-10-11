@@ -12,6 +12,9 @@ body {
     height: 300px;
     width: 300px;
     margin: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
 }
 
 .outerbox2 {
@@ -19,6 +22,9 @@ body {
     height: 300px;
     width: 300px;
     margin: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
 }
 
 .outerbox3 {
@@ -26,6 +32,9 @@ body {
     height: 300px;
     width: 300px;
     margin: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
 }
 
 .outerbox4 {
@@ -33,4 +42,35 @@ body {
     height: 300px;
     width: 300px;
     margin: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.innerbox1 {
+    height: 150px;
+    width: 150px;
+    background-color: orange;
+    grid-column: 2/-1;
+}
+
+.innerbox2 {
+    height: 150px;
+    width: 150px;
+    background-color: yellow;
+    grid-column: 2/-1;
+    grid-row: 2/-1;
+}
+
+.innerbox3 {
+    height: 150px;
+    width: 150px;
+    background-color: green;
+    grid-row: 2/-1;
+}
+
+.innerbox4 {
+    height: 150px;
+    width: 150px;
+    background-color: pink;
 }
