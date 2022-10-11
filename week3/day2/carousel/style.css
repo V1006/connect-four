@@ -4,8 +4,8 @@
     box-sizing: border-box;
 }
 
-#kitties {
-    height: 600px;
+#carousel {
+    height: 100vh;
     position: relative;
     overflow: hidden;
 }
@@ -26,4 +26,26 @@
 .exit {
     transform: translateX(-100%);
     transition: transform, 3s;
+}
+
+.circleContainer {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 5rem;
+    width: 100%;
+}
+
+.circle {
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 0.3rem solid white;
+    border-radius: 50%;
+    display: flex;
+    margin: 0.5rem;
+    cursor: pointer;
+}
+
+.circle.active {
+    background-color: white;
 }
