@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    display: flex;
+}
+
+.outerbox1 {
+    background-color: grey;
+    height: 300px;
+    width: 300px;
+    margin: 5px;
+}
+
+.outerbox2 {
+    background-color: black;
+    height: 300px;
+    width: 300px;
+    margin: 5px;
+}
+
+.outerbox3 {
+    background-color: blue;
+    height: 300px;
+    width: 300px;
+    margin: 5px;
+}
+
+.outerbox4 {
+    background-color: purple;
+    height: 300px;
+    width: 300px;
+    margin: 5px;
+}
