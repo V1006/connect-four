@@ -4,8 +4,9 @@ const nav = document.getElementById("nav");
 const xButton = document.getElementById("xButton");
 const shroud = document.querySelector(".shroud");
 
-// opening the nav bar on click as well as adding the function to close the nav bar on screen click
+// opening the nav bar on click
 hamburger.addEventListener("click", function () {
+    console.log();
     nav.style.clipPath = "polygon(0 0, 100% 0, 100% 100%, 0 100%)";
     shroud.classList.add("active");
 });

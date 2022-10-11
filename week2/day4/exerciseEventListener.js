@@ -40,8 +40,8 @@ box.addEventListener("mousedown", x);
 
 box2.addEventListener("mousedown", function () {
     box2.style.backgroundColor = "#" + random(256 ** 3).toString(16);
-}); */
-
+});
+ */
 // 3 solution with removing event listener
 
 //note for me : if event.target.id === box event.stopPropagation()  possible solution  event.target.removeEventlistener
