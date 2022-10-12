@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+img {
+    pointer-events: none;
+    user-select: none;
+}
+
+.container {
+    height: 510px;
+    width: 1000px;
+    position: absolute;
+    top: 200px;
+    left: 500px;
+}
+
+.before {
+    position: absolute;
+    inset: 0;
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+}
+
+.line {
+    background-color: red;
+    height: 510px;
+    width: 10px;
+    position: absolute;
+    top: 0;
+    left: 990px;
+}
+
+.line:hover {
+    cursor: grab;
+}
