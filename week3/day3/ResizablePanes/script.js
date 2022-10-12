@@ -8,14 +8,18 @@ line.addEventListener("mousedown", drag);
 document.documentElement.addEventListener("mouseup", removeEvent);
 
 // functions
+
+// moving the line on mousemove
 function drag() {
     container.addEventListener("mousemove", changeLinePosition);
 }
 
+// remove the mouse move on mouseup
 function removeEvent() {
     container.removeEventListener("mousemove", changeLinePosition);
 }
 
+// changing the position of the line
 function changeLinePosition(event) {
     let x = event.clientX - container.offsetLeft + "px";
     if (event.clientX - container.offsetLeft >= 990) {
