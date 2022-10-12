@@ -28,6 +28,5 @@ function changeLinePosition(event) {
         line.style.left = event.clientX - container.offsetLeft + "px";
     }
 
-    before.style.clipPath =
-        "polygon(" + x + " 0, 100% 0, 100% 100%, " + x + " 100%)";
+    before.style.clipPath = `polygon(${x} 0, 100% 0, 100% 100%, ${x} 100%)`;
 }

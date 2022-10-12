@@ -11,7 +11,7 @@ img {
 .container {
     height: 510px;
     width: 1000px;
-    position: absolute;
+    position: fixed;
     top: 200px;
     left: 500px;
 }
