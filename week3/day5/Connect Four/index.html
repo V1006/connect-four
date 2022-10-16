@@ -8,12 +8,32 @@
         <title>Connect 4 🔴🟡</title>
     </head>
     <body>
-        <h1>Connect 4</h1>
+
         <div class="win-screen inactive">
             <p></p>
             <button class="rematch">Rematch</button>
         </div>
+        
         <main>
+            <div class="backgroundImg" id="classicImg"></div>
+            <div class="backgroundImg" id="HardImg"></div>
+            <h1 id="headerH1">Connect 4</h1>
+            <div class="shroud1">
+                <div class="xOut"></div>
+                <p>Exit Hard Mode</p>
+            </div>
+            <div class="shroud2"></div>
+            <div class="inputContainer">
+                <H1 id="HardModePlayerName"></H1>
+                <input type="text"class="input" maxlength="1" placeholder="A-G">
+            </div>
+            <div class="classicModeButton modeActive">Classic Mode</div>
+            <div class="hardModeButton">Hard Mode</div>
+            <ul>
+                <li>2 Sec</li>
+                <li>5 Sec</li>
+                <li>10 Sec</li>
+            </ul>
             <div class="container">
                 <div tabindex="-1" class="drop">
                     <div class="dropbox Player1">
@@ -180,7 +200,16 @@
                         </div>
                     </div>
                 </div>
+            <div class="names">
+                    <div class="columnName"><p>A</p></div>
+                    <div class="columnName"><p>B</p></div>
+                    <div class="columnName"><p>C</p></div>
+                    <div class="columnName"><p>D</p></div>
+                    <div class="columnName"><p>E</p></div>
+                    <div class="columnName"><p>F</p></div>
+                    <div class="columnName"><p>G</p></div> 
             </div>
+
         </main>
         <script src="script.js"></script>
     </body>
