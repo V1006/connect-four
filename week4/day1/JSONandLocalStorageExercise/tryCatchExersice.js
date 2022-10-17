@@ -26,8 +26,19 @@ function translateNumberToGerman() {
         alert(numberNames[askForNumber() - 1]);
     } catch (error) {
         console.log(error);
+        translateNumberToGerman();
     }
-    translateNumberToGerman();
 }
 
 translateNumberToGerman();
+
+/* function translateNumberToGerman() {
+    try {
+        return numberNames[askForNumber() - 1];
+    } catch (error) {
+        console.log(error);
+        translateNumberToGerman();
+    }
+}
+
+alert(translateNumberToGerman()); */

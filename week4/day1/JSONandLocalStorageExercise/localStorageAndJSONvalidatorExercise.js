@@ -32,11 +32,10 @@ localStorage.removeItem("key");
 // Exercise 1
 
 const txtField = document.querySelector("#txt");
-
-txtField.addEventListener("keydown", handleKeyDown);
-
+txtField.addEventListener("keyup", handleKeyUp);
+txtField.value = localStorage.getItem("txtField");
 let input;
-function handleKeyDown(event) {
+function handleKeyUp(event) {
     input = event.target.value;
     localStorage.setItem("txtField", event.target.value);
 }
