@@ -41,6 +41,8 @@ var audioCtx = new (window.AudioContext ||
     window.webkitAudioContext ||
     window.audioContext)();
 
+// sound test code (NOT MINE)
+
 if (gameMode === "HardMode") handleHModeClick();
 
 // CLASSIC MODE
