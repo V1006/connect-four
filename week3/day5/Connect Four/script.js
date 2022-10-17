@@ -34,7 +34,7 @@ const shroud2 = document.querySelector(".shroud2");
 const hardModeExit = document.querySelector(".xOut");
 const slots = Array.from(document.querySelectorAll(".slot"));
 const hardBG = document.querySelector("#HardImg");
-// sound test code (NOT MINE)
+// Last thing added sound test code just for fun(NOT MINE)
 
 //if you have another AudioContext class use that one, as some browsers have a limit
 var audioCtx = new (window.AudioContext ||
@@ -169,6 +169,7 @@ function handleKeyDown(event) {
         dropZone[position].classList.add(currentPlayer);
     }
     if (event.key === "Enter") {
+        // giving the click event a "fake" event so it knows what current target is
         handleColumnClick({ currentTarget: dropZone[position] });
     }
 }
@@ -573,7 +574,7 @@ function checkForVDiagonallyHard(diag) {
     }
 }
 
-//sound test code part 2 (NOT MINE)
+// Last thing added sound test code just for fun part 2(NOT MINE)
 //All arguments are optional:
 
 //duration of the tone in milliseconds. Default is 500
