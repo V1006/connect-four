@@ -9,7 +9,7 @@
 // GLOBAL VARIABLES
 let artist;
 let type;
-let spotifyData;
+let NextData;
 
 const form = document.querySelector("form");
 const inputField = form.querySelector(".inputField");
@@ -30,13 +30,18 @@ function handleSubmit(event) {
     artist = inputField.value;
     type = typeField.value;
     let url = `https://spicedify.herokuapp.com/spotify?query=${artist}&type=${type}`;
+    // works fine for artists but not for albums the link above works ok for albums but not for artist
+    /* let url = `https://spicedify.herokuapp.com/spotify?query=${type}:${artist}&type=${type}`; */
     getSpotifyData(url);
 }
 
 function getSpotifyData(url) {
     $.get(url, (data) => {
-        spotifyData = data;
+        console.log(data);
         data[typeField.value + "s"].items.forEach((artist) => {
+            if (artist.images[0] === undefined)
+                artist.images[0].url =
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png";
             let htmlContent = `
             <li>
             <img class="icon" src="${artist.images[0].url}"></img>
@@ -45,11 +50,11 @@ function getSpotifyData(url) {
             `;
             resultList.innerHTML += htmlContent;
         });
+        NextData = data[typeField.value + "s"].next;
+        loadMoreButton.classList.toggle("visible", NextData);
     });
 }
 
 function handleLoadMoreButton() {
-    console.log(spotifyData);
-    let newURL = spotifyData[typeField.value + "s"].next;
-    getSpotifyData(newURL);
+    getSpotifyData(NextData);
 }

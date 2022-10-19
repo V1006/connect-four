@@ -9,3 +9,10 @@ li {
     display: flex;
     margin-bottom: 10px;
 }
+
+.load-more-button {
+    display: none;
+}
+.load-more-button.visible {
+    display: block;
+}
