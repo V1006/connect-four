@@ -1,0 +1,11 @@
+.icon {
+    height: 160px;
+    width: 160px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+li {
+    display: flex;
+    margin-bottom: 10px;
+}
