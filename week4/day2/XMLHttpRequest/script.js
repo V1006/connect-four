@@ -30,7 +30,7 @@ function handleInput(event) {
     }
 }
 
-/* $.get using jquery to solve the getData function */
+/*  $.get using jquery to solve the getData function */
 
 /* function handleInput(event) {
     let pokemonIndex;

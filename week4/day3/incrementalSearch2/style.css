@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.highlighted {
+    background-color: yellow;
+}
+
+body {
+    margin: 5px;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+ul {
+    list-style: none;
+    border-style: hidden solid solid solid;
+    border-color: black;
+    border-width: 1px;
+    margin: 0px;
+    max-width: 145px;
+}
