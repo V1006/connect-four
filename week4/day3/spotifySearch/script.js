@@ -10,7 +10,8 @@
 let artist;
 let type;
 let NextData;
-
+const placeHolder =
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png";
 const form = document.querySelector("form");
 const inputField = form.querySelector(".inputField");
 const typeField = form.querySelector(".typeField");
@@ -39,9 +40,8 @@ function getSpotifyData(url) {
     $.get(url, (data) => {
         console.log(data);
         data[typeField.value + "s"].items.forEach((artist) => {
-            if (artist.images[0] === undefined)
-                artist.images[0].url =
-                    "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png";
+            if (artist.images.length <= 0 || artist.images[0].url === undefined)
+                artist.images.push({ url: placeHolder });
             let htmlContent = `
             <li>
             <img class="icon" src="${artist.images[0].url}"></img>
@@ -52,9 +52,33 @@ function getSpotifyData(url) {
         });
         NextData = data[typeField.value + "s"].next;
         loadMoreButton.classList.toggle("visible", NextData);
+        if (window.location.search.includes("scroll=infinite")) {
+            checkScroll();
+        }
     });
 }
 
+const scrollThreshold = 500;
+
 function handleLoadMoreButton() {
     getSpotifyData(NextData);
+}
+
+function checkScroll() {
+    const scrollTop = document.documentElement.scrollTop;
+    const windowHeight = window.innerHeight;
+    const docHeight = document.body.scrollHeight;
+
+    let hasScrolledToButton =
+        scrollTop + windowHeight >= docHeight - scrollThreshold;
+
+    if (hasScrolledToButton && NextData) {
+        getSpotifyData(NextData);
+    } else {
+        setTimeout(checkScroll, 500);
+    }
+
+    console.log(scrollTop);
+    console.log(windowHeight);
+    console.log(docHeight);
 }
