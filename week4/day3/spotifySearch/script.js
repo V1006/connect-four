@@ -15,6 +15,7 @@ const placeHolder =
 const form = document.querySelector("form");
 const inputField = form.querySelector(".inputField");
 const typeField = form.querySelector(".typeField");
+const resultTitle = document.querySelector(".resultTitles");
 let resultList = document.querySelector(".resultList");
 const loadMoreButton = document.querySelector(".load-more-button");
 
@@ -24,6 +25,9 @@ form.addEventListener("submit", handleSubmit);
 loadMoreButton.addEventListener("click", handleLoadMoreButton);
 
 // FUNCTIONS
+function capitalFirstLett(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+}
 
 function handleSubmit(event) {
     event.preventDefault();
@@ -33,6 +37,9 @@ function handleSubmit(event) {
     let url = `https://spicedify.herokuapp.com/spotify?query=${artist}&type=${type}`;
     // works fine for artists but not for albums the link above works ok for albums but not for artist
     /* let url = `https://spicedify.herokuapp.com/spotify?query=${type}:${artist}&type=${type}`; */
+    resultTitle.innerText = `Searching.. ${capitalFirstLett(
+        type
+    )}s for ${capitalFirstLett(artist)}`;
     getSpotifyData(url);
 }
 
@@ -45,7 +52,7 @@ function getSpotifyData(url) {
             let htmlContent = `
             <li>
             <img class="icon" src="${artist.images[0].url}"></img>
-            <p>${artist.name}</p>
+            <a href="${artist.external_urls.spotify}" target="_blank">${artist.name}</a>
             </li>
             `;
             resultList.innerHTML += htmlContent;
