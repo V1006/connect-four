@@ -3,3 +3,7 @@ img {
     width: 200px;
     object-fit: cover;
 }
+
+li {
+    list-style: none;
+}

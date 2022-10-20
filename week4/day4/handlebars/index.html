@@ -18,7 +18,7 @@
             <ul>
                 <li>Born: {{born}}</li>
                 <li>Died: {{died}}</li>
-                <li>Writing:{{#each selectedWritings}} <ul> <li>{{ . }}</li></ul>{{/each}}</li>
+                <li>Writing:<ul> {{#each selectedWritings}} <li>{{ . }}</li>{{/each}}</ul></li>
                 <li>Quote: {{quote}}</li>
                 <li><img src="{{photo}}" alt=""></li> 
             </ul>
