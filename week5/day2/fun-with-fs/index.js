@@ -3,6 +3,7 @@ const path = require("path");
 
 const rootDirPath = `${__dirname}/files`;
 
+// exercise 1
 logSizes(rootDirPath);
 
 function logSizes(dirPath) {
@@ -33,4 +34,21 @@ function logSizes(dirPath) {
             }
         }
     });
+}
+
+// exercise 2
+
+fs.writeFileSync("files.json", JSON.stringify(mapSizes(rootDirPath)));
+
+function mapSizes(dirPath) {
+    const obj = {};
+    const read = fs.readdirSync(dirPath, { withFileTypes: true });
+    for (const item of read) {
+        if (item.isFile()) {
+            obj[item.name] = fs.statSync(path.join(dirPath, item.name)).size;
+        } else if (item.isDirectory()) {
+            obj[item.name] = mapSizes(path.join(dirPath, item.name));
+        }
+    }
+    return obj;
 }
