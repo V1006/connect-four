@@ -13,3 +13,7 @@ sum(2, 5, (error, result) => {
     }
     console.log(result);
 });
+
+module.export = {
+    sum,
+};
