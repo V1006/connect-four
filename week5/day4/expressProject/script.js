@@ -45,8 +45,8 @@ app.use(express.json());
 //  Map different URL endpoints to routing functions
 //----------------------------------------------------
 let count = 0;
-app.get("/", (req, res) => {
-    res.status(200).send(`<!doctype html>
+app.get("/", (request, response) => {
+    response.status(200).send(`<!doctype html>
         <html>
         <title></title>
         <form method="POST">
@@ -58,7 +58,7 @@ app.get("/", (req, res) => {
 
 app.post("/", (request, response) => {
     count++;
-    response.status(200).redirect("/"); /////////////S
+    response.status(200).redirect("/"); /////////////
 });
 
 app.get("/users", (req, res) => {
