@@ -1,0 +1,329 @@
+* {
+    /* box-sizing: border-box; */
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+}
+header {
+    background-color: darkblue;
+    opacity: 0;
+}
+
+#headerH1 {
+    text-align: center;
+    font-size: 3rem;
+    font-family: Jokerman;
+    background: -webkit-linear-gradient(rgb(244, 21, 21), rgb(247, 227, 7));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* Background images */
+.backgroundImg {
+    height: calc(100vh - 0px);
+    width: 100%;
+    backface-visibility: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+#classicImg {
+    background-image: url(assets/candy\ background.jpg);
+    background-size: cover;
+}
+
+#HardImg {
+    background-image: url(assets/background-hard-mode.png);
+    background-repeat: repeat;
+    background-size: 500px 500px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+/* Buttons for hard and classic mode */
+.hardModeButton {
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    top: 550px;
+    left: 200px;
+    background-color: silver;
+    border: 1px solid black;
+    border-radius: 1rem;
+    padding: 5px;
+    cursor: pointer;
+    width: 200px;
+    text-align: center;
+}
+.hardModeButton:hover {
+    background-color: yellow;
+    color: black;
+}
+
+.hardModeButton:active {
+    background-color: black;
+    color: white;
+}
+
+.classicModeButton {
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    top: 400px;
+    left: 200px;
+    background-color: silver;
+    border: 1px solid black;
+    border-radius: 1rem;
+    padding: 5px;
+    cursor: pointer;
+    width: 200px;
+    text-align: center;
+}
+.classicModeButton:active {
+    background-color: black;
+    color: white;
+}
+
+.classicModeButton:hover {
+    background-color: yellow;
+}
+
+.modeActive {
+    background-color: black;
+    color: white;
+}
+
+/* hard mode options */
+
+ul {
+    list-style: none;
+    position: absolute;
+    top: 600px;
+    left: 166px;
+    width: 200px;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: clip-path 0.3s;
+}
+ul li {
+    font-size: 2rem;
+    text-align: center;
+    color: white;
+}
+ul li:hover {
+    background-color: yellow;
+    border-radius: 10px;
+    cursor: pointer;
+    color: black;
+}
+
+.shroud1 {
+    width: 50%;
+    height: calc(100vh - 73px);
+    background-color: black;
+    position: absolute;
+    z-index: 2;
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    transition: clip-path 1s;
+}
+
+.shroud2 {
+    width: 50%;
+    height: calc(100vh - 73px);
+    background-color: black;
+    position: absolute;
+    right: 0;
+    z-index: 2;
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    transition: clip-path 1s;
+}
+
+/* hard mode input container */
+
+.inputContainer {
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    left: calc(50% - 150px);
+    top: calc(50% - 150px);
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 3s;
+    color: whitesmoke;
+}
+
+.input {
+    height: 50px;
+    width: 50px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 3.5s;
+    font-size: 2rem;
+}
+.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.shroud1 p {
+    height: 50px;
+    width: 100px;
+    color: white;
+    position: relative;
+    left: 50px;
+}
+
+.xOut {
+    height: 50px;
+    width: 50px;
+    background-image: url(assets/x.png);
+    background-size: cover;
+    position: relative;
+    top: 100px;
+    left: 50px;
+    cursor: pointer;
+}
+.xOut:hover {
+    cursor: pointer;
+}
+
+#HardModePlayerName {
+    width: 362px;
+}
+
+/* column names */
+.names {
+    display: flex;
+}
+
+.columnName {
+    /* background-color: blue; */
+    height: 80px;
+    width: 80px;
+    margin: 10px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.columnName p {
+    font-size: 2rem;
+}
+
+/* drop line */
+
+.drop {
+    display: flex;
+    cursor: grabbing;
+}
+
+.dropbox {
+    /* background-color: blue; */
+    height: 80px;
+    width: 80px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.dropbox div {
+    height: 80px;
+    width: 80px;
+    transform: translate(-30px, -30px);
+}
+
+/* board */
+
+#board {
+    display: flex;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 73px);
+    flex-direction: column;
+}
+
+.slot {
+    /* background-color: blue; */
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
+}
+
+.hole {
+    /* background-color: red; */
+    height: 80px;
+    width: 80px;
+    transform: translate(-30px, -30px);
+    border: 40px solid rgb(240, 114, 135);
+    transition: all 1.2s ease;
+    border-radius: 50%;
+}
+
+.hole.hard {
+    border: 40px solid black;
+}
+
+.Player1 {
+    background-image: url(assets/donut\ red);
+    background-size: cover;
+}
+
+.Player2 {
+    background-image: url(assets/donut\ yellow);
+    background-size: cover;
+}
+
+.Player1-Hard-Mode {
+    background-image: url(assets/hard\ player\ 1.png);
+    background-size: cover;
+}
+
+.Player2-Hard-Mode {
+    background-image: url(assets/player2HardMode.png);
+    background-size: cover;
+}
+
+/* misc */
+.win-screen {
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    background-color: black;
+    left: calc(50% - 150px);
+    top: calc(50% - 100px);
+    border-radius: 10px;
+    z-index: 1;
+    opacity: 0.9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inactive {
+    visibility: hidden;
+}
+
+.win-screen p {
+    font-size: 3rem;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: white;
+}
+.win-screen button {
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+button:hover {
+    cursor: pointer;
+}

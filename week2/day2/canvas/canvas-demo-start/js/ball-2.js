@@ -12,7 +12,7 @@ function Ball() {
     this.r = randomNum(50, 5);
     this.x = randomNum(500 - this.r, this.r);
     this.y = randomNum(600 - this.r, this.r);
-    this.speed = randomNum(15, 1);
+    this.speed = randomNum(10, 1);
     this.color = "#" + randomNum(256 ** 3).toString(16);
     this.dirX = Math.random();
     this.dirY = Math.random();
@@ -24,7 +24,7 @@ function createBallArray(howManyBalls) {
     }
 }
 // input how many balls you want to see on the display
-createBallArray(randomNum(30, 2));
+createBallArray(randomNum(10, 2));
 
 //starting the "game loop" after initialization
 window.requestAnimationFrame(drawMultiBalls);

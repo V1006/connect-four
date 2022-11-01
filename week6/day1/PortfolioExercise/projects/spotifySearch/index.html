@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+    <form> 
+        <h1>Spotify Search</h1>
+        <input
+            type="search"
+            name="query"
+            placeholder="Type some text to search"
+            required
+            class="inputField"
+        />
+        <select name="type" class="typeField">
+            <option value="artist">Artist</option>
+            <option value="album">Album</option>
+        </select>
+        <button>Search</button>
+    </form>
+<section class="results">
+    <h2 class="resultTitles"></h2>
+    <ul class="resultList"></ul>
+    <p>
+        <button class="load-more-button">More</button>
+    </p>
+</section>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
