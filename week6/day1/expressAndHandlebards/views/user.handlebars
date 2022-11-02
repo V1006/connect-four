@@ -1,0 +1,19 @@
+<div class="foundUserContainer">
+    <h1>{{foundUser.first_name}} {{foundUser.last_name}}</h1>
+    <img src="{{foundUser.avatar}}" alt="" />
+    <a href=" mailto:{{foundUser.email}}">Contact {{foundUser.first_name}}</a>
+</div>
+
+<section class="otherUsersContainer">
+    <h2>OTHER USERS</h2>
+    <div class="contactsBox">
+        {{#each otherUsers}}
+
+            <a class="contacts" href="/users/{{id}}">
+                <img src="{{avatar}}" alt="" />
+                <p>{{first_name}} {{last_name}}</p>
+            </a>
+        {{/each}}
+    </div>
+    <a class="back" href="/">Back to Homepage</a>
+</section>

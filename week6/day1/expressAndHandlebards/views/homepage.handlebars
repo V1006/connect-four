@@ -1,0 +1,12 @@
+<h1>USERS</h1>
+<p class="headerP">These are our last registered Users</p>
+
+<div class="userContainer">
+    {{#each users}}
+        <a href="/users/{{id}}">
+            <img src={{avatar}} alt="" />
+            <p>{{first_name}} {{last_name}}</p>
+        </a>
+    {{/each}}
+
+</div>
