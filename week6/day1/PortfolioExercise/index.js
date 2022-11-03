@@ -6,7 +6,7 @@ const basicAuth = require("basic-auth");
 // auth functions
 const auth = function (req, res, next) {
     const creds = basicAuth(req);
-    if (!creds || creds.name != "user" || creds.pass != "example1") {
+    if (!creds || creds.name != "user" || creds.pass != "example2") {
         res.setHeader(
             "WWW-Authenticate",
             'Basic realm="Enter your credentials to see this stuff."'
@@ -17,6 +17,7 @@ const auth = function (req, res, next) {
     }
 };
 
+app.use("/spotifySearch", auth);
 app.use(express.static("projects"));
 
 // filesystem reader
@@ -42,13 +43,12 @@ app.get("/", (req, res) => {
     `);
 });
 
-app.use("/spotifySearch", auth);
 // we can pass middleware as a "middle" argument to our route
 // or as the second arg
 // the callback function in the route will only run if next
 // is called in the middleware...
-app.get("/secret", auth, (req, res) => {
-    res.send("<h1>Secret Stuff 🔐</h1>");
-});
+// app.get("/secret", auth, (req, res) => {
+//     res.send("<h1>Secret Stuff 🔐</h1>");
+// });
 
 app.listen(8080, () => console.log("portfolio up and running"));
