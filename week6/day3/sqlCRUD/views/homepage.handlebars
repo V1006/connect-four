@@ -1,0 +1,33 @@
+<section class="content">
+    <h1>Users list</h1>
+    <p class="headerP">These is a total of {{users.length}} users:</p>
+
+    <div class="userContainer">
+        <p>#</p>
+        <p>Name</p>
+        <p>E-mail</p>
+        <p>Actions</p>
+        <div class="checkbox"> 
+            {{#each users}}
+                <input type="checkbox"></input>
+            {{/each}}
+        </div>
+        <ul class="name">
+            {{#each users}}
+                <li>{{first_name}} {{last_name}}</li>
+            {{/each}}
+        </ul>
+        <ul class="email">
+            {{#each users}}
+                <li>{{email}}</li>
+            {{/each}}
+        </ul>
+        <ul class="edit">
+            {{#each users}}
+                <li><a type="edit" href="/admin/users/{{id}}/edit">Edit</a></li>
+            {{/each}} 
+        </ul>
+
+    </div>
+
+</section>

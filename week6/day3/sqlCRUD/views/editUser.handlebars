@@ -1,0 +1,36 @@
+<section class="content">
+    <h1>Edit user</h1>
+    <form action="" method="post">
+        <div class="forms">
+            <p>First Name</p>
+            <input
+                value="{{user.first_name}}"
+                type="text"
+                id="fName"
+                name="firstName"
+            />
+        </div>
+        <div class="forms">
+            <p>Last Name</p>
+            <input
+                value="{{user.last_name}}"
+                type="text"
+                id="lName"
+                name="lastName"
+            />
+        </div>
+        <div class="forms">
+            <p>E-mail</p>
+            <input value="{{user.email}}" type="text" id="Email" name="Email" />
+        </div>
+        <div class="forms">
+            <p>Profile Picture</p>
+            <input
+                value="{{user.profile_picture_url}}"
+                type="text"
+                id="profilePicture"
+                name="profilePicture"
+            />
+        </div>
+    </form>
+</section>
