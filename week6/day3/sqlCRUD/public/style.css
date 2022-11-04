@@ -5,10 +5,17 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.content {
+body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+/* Homepage */
+.content {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
 }
 
 h1 {
@@ -32,9 +39,34 @@ h1 {
 
 .userContainer li {
     border-bottom: black 1px solid;
-    padding: 3px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
 }
 
+/* Buttons */
+
+.buttons {
+    margin-top: 50px;
+    display: flex;
+    gap: 20px;
+}
+
+.buttons a {
+    border-radius: 5px;
+    background-color: #1d90ff;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    align-items: center;
+    min-width: 150px;
+    justify-content: center;
+}
+
+/* user edit */
 .name {
     list-style: none;
     grid-column: 2/3;
@@ -45,9 +77,14 @@ h1 {
     grid-column: 3/4;
 }
 
+.checkbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
 .checkbox input {
     border-bottom: black 1px solid;
-    margin: 5px;
 }
 
 .edit {
@@ -69,4 +106,22 @@ h1 {
 .forms p {
     font-weight: bold;
     padding: 10px;
+    min-width: 150px;
+}
+
+/* Create user */
+
+.buttons button {
+    border-radius: 5px;
+    background-color: #1d90ff;
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    align-items: center;
+    min-width: 150px;
+    justify-content: center;
+    cursor: pointer;
 }

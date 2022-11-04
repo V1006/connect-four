@@ -16,9 +16,36 @@ function getUserById(id) {
         .then((result) => result.rows[0]);
 }
 
+function createUser({ first_name, last_name, email, profile_picture_url }) {
+    return db.query(
+        `
+    INSERT INTO users (first_name, last_name, email, profile_picture_url)
+    VALUES ($1, $2, $3, $4)
+    `,
+        [first_name, last_name, email, profile_picture_url]
+    );
+}
+
+function updateUser({
+    first_name,
+    last_name,
+    email,
+    profile_picture_url,
+    user_id,
+}) {
+    console.log(first_name, last_name, email, profile_picture_url, user_id);
+    return db.query(
+        `
+    UPDATE users SET first_name = $1, last_name = $2, email = $3, profile_picture_url = $4
+    WHERE id = $5;
+    `,
+        [first_name, last_name, email, profile_picture_url, user_id]
+    );
+}
+
 module.exports = {
     getUsers,
     getUserById,
+    createUser,
+    updateUser,
 };
-
-// input checkbox
