@@ -1,6 +1,12 @@
 const express = require("express");
 const path = require("path");
-const { getUsers, getUserById, createUser, updateUser } = require("./db");
+const {
+    getUsers,
+    getUserById,
+    createUser,
+    updateUser,
+    deleteUser,
+} = require("./db");
 const { engine } = require("express-handlebars");
 
 const app = express();
@@ -32,18 +38,39 @@ app.get("/admin/users/new", (request, response) => {
 });
 
 app.post("/admin/users/new", (request, response) => {
-    createUser(request.body).then((result) => {
-        result.rows[0];
-    });
-    response.redirect("/admin/users");
+    createUser(request.body)
+        .then((result) => {
+            result.rows[0];
+            response.redirect("/admin/users");
+        })
+        .catch((error) => {
+            console.log(error);
+            response.render("createUser", {
+                title: "create new user",
+                error: true,
+            });
+        });
 });
 
 app.post("/admin/users/:user_id/edit", (request, response) => {
     const { user_id } = request.params;
     updateUser({ ...request.body, user_id: user_id }).then((result) => {
         result.rows[0];
+        response.redirect("/admin/users");
     });
-    response.redirect("/admin/users");
+});
+
+app.post("/admin/users/delete", (request, response) => {
+    let ids = [];
+    if (Array.isArray(request.body.checkbox)) {
+        ids = request.body.checkbox;
+        //promise deleteUser(request.body).then(() => response.redirect("/admin/users"))
+    } else {
+        ids.push(request.body.checkbox);
+    }
+    Promise.all(ids.map((id) => deleteUser(id))).then(() =>
+        response.redirect("/admin/users")
+    );
 });
 
 app.listen(8080, () => console.log(`Listening on http://localhost:8080`));

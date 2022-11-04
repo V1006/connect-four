@@ -2,14 +2,16 @@
     <h1>Users list</h1>
     <p class="headerP">These is a total of {{users.length}} users:</p>
 
-    <div class="userContainer">
+    <form class="userContainer" id="delete" action="/admin/users/delete" method="POST">
         <p>#</p>
         <p>Name</p>
         <p>E-mail</p>
         <p>Actions</p>
         <div class="checkbox"> 
             {{#each users}}
-                <input type="checkbox"></input>
+                <div class="checkboxLine" >
+                <input type="checkbox" value="{{id}}" name="checkbox"></input>
+                </div>
             {{/each}}
         </div>
         <ul class="name">
@@ -28,11 +30,11 @@
             {{/each}} 
         </ul>
 
-    </div>
+    </form>
 
     <div class="buttons">
         <a href="/admin/users/new">Create new user</a>
-        <a href="#">Delete selected</a>
+        <button type="submit" form="delete" >Delete selected</button>
     </div>
 
 </section>

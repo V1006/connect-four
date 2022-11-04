@@ -1,5 +1,8 @@
 <section class="content">
     <h1>Create new user</h1>
+    {{#if error}}
+        <p>Something went wrong</p>
+    {{/if}}
     <form action="/admin/users/new" method="POST">
         <div class="forms">
             <p>First Name</p>
