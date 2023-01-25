@@ -5,19 +5,21 @@
 
 body {
     height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
 }
 header {
     background-color: darkblue;
     opacity: 0;
 }
 
-#headerH1 {
-    text-align: center;
-    font-size: 3rem;
-    font-family: Jokerman;
-    background: -webkit-linear-gradient(rgb(244, 21, 21), rgb(247, 227, 7));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.logo-container {
+    position: fixed;
+    top: 0;
+}
+
+#logo {
+    height: 200px;
+    width: 190px;
 }
 /* Background images */
 .backgroundImg {
@@ -29,7 +31,7 @@ header {
 }
 
 #classicImg {
-    background-image: url(assets/candy\ background.jpg);
+    background-image: url(assets/photo_2022-11-30_15-51-50.jpg);
     background-size: cover;
 }
 
@@ -43,21 +45,25 @@ header {
 /* Buttons for hard and classic mode */
 .hardModeButton {
     font-size: 30px;
-    font-family: Arial, Helvetica, sans-serif;
     position: absolute;
-    top: 550px;
+    top: 477px;
     left: 200px;
-    background-color: silver;
-    border: 1px solid black;
-    border-radius: 1rem;
-    padding: 5px;
+    background-color: black;
+    border: 5px solid #15f4ee;
+    border-radius: 100px;
+    padding: 20px;
     cursor: pointer;
-    width: 200px;
+    width: 250px;
     text-align: center;
+    color: #15f4ee;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    transition: 1.5s;
 }
 .hardModeButton:hover {
-    background-color: yellow;
-    color: black;
+    box-shadow: 0 5px 50px 0 #15f4ee inset, 0 5px 50px 0 #15f4ee,
+        0 5px 50px 0 #15f4ee inset, 0 5px 50px 0 #15f4ee;
 }
 
 .hardModeButton:active {
@@ -67,17 +73,21 @@ header {
 
 .classicModeButton {
     font-size: 30px;
-    font-family: Arial, Helvetica, sans-serif;
     position: absolute;
-    top: 400px;
+    top: 260px;
     left: 200px;
-    background-color: silver;
-    border: 1px solid black;
-    border-radius: 1rem;
-    padding: 5px;
+    background-color: black;
+    border: 5px solid #15f4ee;
+    border-radius: 100px;
+    padding: 20px;
     cursor: pointer;
-    width: 200px;
+    width: 250px;
     text-align: center;
+    color: #15f4ee;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    transition: 1.5s;
 }
 .classicModeButton:active {
     background-color: black;
@@ -85,12 +95,13 @@ header {
 }
 
 .classicModeButton:hover {
-    background-color: yellow;
+    box-shadow: 0 5px 50px 0 #15f4ee inset, 0 5px 50px 0 #15f4ee,
+        0 5px 50px 0 #15f4ee inset, 0 5px 50px 0 #15f4ee;
 }
 
 .modeActive {
-    background-color: black;
-    color: white;
+    box-shadow: 0 5px 50px 0 #15f4ee inset, 0 5px 50px 0 #15f4ee,
+        0 5px 50px 0 #15f4ee inset, 0 5px 50px 0 #15f4ee;
 }
 
 /* hard mode options */
@@ -99,7 +110,7 @@ ul {
     list-style: none;
     position: absolute;
     top: 600px;
-    left: 166px;
+    left: 200px;
     width: 200px;
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     transition: clip-path 0.3s;
@@ -110,7 +121,7 @@ ul li {
     color: white;
 }
 ul li:hover {
-    background-color: yellow;
+    background-color: #15f4ee;
     border-radius: 10px;
     cursor: pointer;
     color: black;
@@ -208,6 +219,7 @@ ul li:hover {
     margin: 10px;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
+    color: ghostwhite;
 }
 
 .columnName p {
